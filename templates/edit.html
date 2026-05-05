@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card shadow">
+    <div class="card-header bg-warning">
+        <i class="bi bi-pencil-square"></i> Editar Producto
+    </div>
+
+    <div class="card-body">
+        <form method="POST">
+
+            <!-- Nombre -->
+            <div class="mb-3">
+                <label class="form-label">Nombre del producto</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-tag"></i></span>
+                    <input 
+                        type="text" 
+                        name="name" 
+                        class="form-control" 
+                        value="{{ product.name }}" 
+                        required
+                    >
+                </div>
+            </div>
+
+            <!-- Precio -->
+            <div class="mb-3">
+                <label class="form-label">Precio</label>
+                <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input 
+                        type="number" 
+                        name="price" 
+                        class="form-control" 
+                        step="0.01" 
+                        min="0"
+                        value="{{ product.price }}"
+                        required
+                    >
+                </div>
+            </div>
+
+            <!-- Stock -->
+            <div class="mb-3">
+                <label class="form-label">Stock</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-box"></i></span>
+                    <input 
+                        type="number" 
+                        name="stock" 
+                        class="form-control" 
+                        min="0"
+                        value="{{ product.stock }}"
+                    >
+                </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="d-flex justify-content-between">
+                <a href="/" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left"></i> Volver
+                </a>
+
+                <button class="btn btn-warning">
+                    <i class="bi bi-save"></i> Actualizar
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

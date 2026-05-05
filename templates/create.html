@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card shadow">
+    <div class="card-header bg-primary text-white">
+        <i class="bi bi-plus-circle"></i> Crear Producto
+    </div>
+
+    <div class="card-body">
+        <form method="POST">
+
+            <!-- Nombre -->
+            <div class="mb-3">
+                <label class="form-label">Nombre del producto</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-tag"></i></span>
+                    <input 
+                        type="text" 
+                        name="name" 
+                        class="form-control" 
+                        placeholder="Ej: Laptop, Mouse..." 
+                        required
+                    >
+                </div>
+            </div>
+
+            <!-- Precio -->
+            <div class="mb-3">
+                <label class="form-label">Precio</label>
+                <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input 
+                        type="number" 
+                        name="price" 
+                        class="form-control" 
+                        step="0.01" 
+                        min="0"
+                        placeholder="0.00"
+                        required
+                    >
+                </div>
+            </div>
+
+            <!-- Stock -->
+            <div class="mb-3">
+                <label class="form-label">Stock</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-box"></i></span>
+                    <input 
+                        type="number" 
+                        name="stock" 
+                        class="form-control" 
+                        min="0"
+                        placeholder="0"
+                    >
+                </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="d-flex justify-content-between">
+                <a href="/" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left"></i> Volver
+                </a>
+
+                <button class="btn btn-success">
+                    <i class="bi bi-save"></i> Guardar
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

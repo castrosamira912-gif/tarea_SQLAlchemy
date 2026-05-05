@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3><i class="bi bi-eye"></i> Detalle del Producto</h3>
+
+<ul class="list-group">
+    <li class="list-group-item"><b>ID:</b> {{ product.id }}</li>
+    <li class="list-group-item"><b>Nombre:</b> {{ product.name }}</li>
+    <li class="list-group-item"><b>Precio:</b> {{ product.price }}</li>
+    <li class="list-group-item"><b>Stock:</b> {{ product.stock }}</li>
+</ul>
+
+<a href="/" class="btn btn-secondary mt-3">Volver</a>
+
+{% endblock %}
